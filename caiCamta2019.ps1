@@ -1,7 +1,7 @@
 <# 1. download and install camta#>
 $Path = $env:TEMP; $Installer = "camtasia911111.exe"; $ProgressPreference = 'SilentlyContinue'; Invoke-WebRequest "https://download.techsmith.com/camtasiastudio/releases/19011/camtasia.exe" -OutFile $Path\$Installer; Start-Process -FilePath $Path\$Installer -Args "/y /silent /install" -Verb RunAs -Wait; Remove-Item $Path\$Installer 
 <# 2. insert reginfo to folder#>
-$ProgressPreference = 'SilentlyContinue'; Invoke-WebRequest "https://github.com/StudyWithMe9x/caiCamta2019/raw/refs/heads/main/RegInfo.ini" -OutFile "C:\ProgramData\TechSmith\Camtasia Studio 9\RegInfo.ini"
+$ProgressPreference = 'SilentlyContinue'; Invoke-WebRequest "https://github.com/StudyWithMe9x/caiCamta2019/raw/refs/heads/main/RegInfo.ini" -OutFile "C:\ProgramData\TechSmith\Camtasia Studio 19\RegInfo.ini"
 Set-ItemProperty -path "C:\ProgramData\TechSmith\Camtasia Studio 19\RegInfo.ini" -name IsReadOnly $true
 <# 3. remove folder sample projects#>
 rm 'C:\ProgramData\TechSmith\Camtasia Studio 19\Sample_Projects' -r -force
